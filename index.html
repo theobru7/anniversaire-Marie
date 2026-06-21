@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joyeux Anniversaire ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:linear-gradient(135deg,#ff6b81,#ffb6c1);
+    overflow-x:hidden;
+    color:white;
+    text-align:center;
+}
+
+.container{
+    padding:40px 20px;
+}
+
+h1{
+    font-size:3em;
+    animation:fade 2s;
+}
+
+p{
+    font-size:1.2em;
+    max-width:700px;
+    margin:auto;
+    line-height:1.6;
+}
+
+.gallery{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:40px;
+}
+
+.gallery img{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,.3);
+}
+
+.envelope{
+    margin-top:50px;
+}
+
+button{
+    background:white;
+    color:#ff4d6d;
+    border:none;
+    padding:15px 30px;
+    border-radius:30px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+#message{
+    display:none;
+    margin-top:25px;
+    background:white;
+    color:#444;
+    padding:25px;
+    border-radius:20px;
+    max-width:700px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.confetti{
+    position:fixed;
+    width:10px;
+    height:10px;
+    top:-10px;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+from{transform:translateY(-10px) rotate(0);}
+to{transform:translateY(110vh) rotate(720deg);}
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(-40px);}
+to{opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎉 Joyeux Anniversaire belle plante ! ❤️🎂</h1>
+
+<p>
+Aujourd'hui est une journée spéciale. De toute évidence, je te souhaite un très bon anniversaire.
+J'enrage un peu de ne pas pouvoir être avec toi pour pouvoir t'offrir un bouquet de 7 roses bien rouges et quelques baisers.
+C'est ce que mérite la magnifique plante que tu es. ❤️❤️❤️
+</p>
+
+<div class="gallery">
+<img src="https://picsum.photos/300?1">
+<img src="https://picsum.photos/300?2">
+<img src="https://picsum.photos/300?3">
+</div>
+
+<div class="envelope">
+<button onclick="ouvrir()">💌 Ouvrir la lettre</button>
+
+<div id="message">
+<h2>Pour toi ❤️</h2>
+
+<p>
+Merci d'être une personne aussi géniale.
+Je te souhaite une année remplie d'amour, si je peux aider pour ça héhé❤️
+et de projets réussis et de nouveaux souvenirs à se faire ensemble si on arrive à ça.
+
+Passe un merveilleux anniversaire ! 🎉🥳
+</p>
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+function ouvrir(){
+document.getElementById("message").style.display="block";
+}
+
+for(let i=0;i<120;i++){
+
+let c=document.createElement("div");
+
+c.className="confetti";
+
+c.style.left=Math.random()*100+"vw";
+
+c.style.background=`hsl(${Math.random()*360},100%,60%)`;
+
+c.style.animationDuration=(3+Math.random()*5)+"s";
+
+c.style.animationDelay=Math.random()*5+"s";
+
+document.body.appendChild(c);
+
+}
+
+</script>
+
+</body>
+</html>
